@@ -93,6 +93,12 @@ html {
     font-size: 80%;
   }
 }
+@media (max-width: 485px) {
+  .btn {
+    font-size: 1.1rem;
+    padding: 12px 30px;
+  }
+}
 
 body {
   font-size: var(--text-medium);
@@ -147,11 +153,21 @@ h3,
   font-size: var(--h2);
   text-align: center;
 }
-#aboutme{
+/*#aboutme{
   margin: 2rem 20rem;
   line-height: 2rem;
   text-align: center;
+}*/
+
+#aboutme {
+  margin: 2rem auto; /* Center content horizontally */
+  max-width: 90%; /* Restrict the width to fit within the screen */
+  line-height: 2rem;
+  text-align: center;
+  padding: 1rem; /* Add some inner padding for smaller screens */
+  box-sizing: border-box; /* Include padding in width calculation */
 }
+
 .h3 {
   font-size: var(--h3);
 }
@@ -849,17 +865,22 @@ body.dark .work-links img {
 }
 
 
+
+
 .educs {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1px; 
   margin-block-start: var(--gutter-x-large);
   list-style-type: none;
+  
   background-image: linear-gradient(
     rgba(88, 88, 88, 0.297),
     rgba(214, 214, 214, 0.082)
   );
-}
+  border-radius: 8px; 
+  box-sizing: border-box;}
+
 
 @media (max-width: 1100px) {
   .educ
@@ -973,7 +994,7 @@ s {
   border: 1px solid var(--border);
   border-radius: var(--gutter-nano);
 }
-.contact-email{
+/*.contact-email{
 
   align-content:center;
   
@@ -981,7 +1002,26 @@ s {
 .contact-email p{
   justify-content: right;
   padding: 1rem 15rem;
+}*/
+
+.contact-email {
+  display: flex; /* Enables flexible layout */
+  flex-direction: column; /* Ensures content stacks vertically */
+  align-items: center; /* Centers content horizontally */
+  text-align: center; /* Centers text */
+  margin: 2rem auto; /* Centers the container and adds vertical spacing */
+  width: 90%; /* Keeps the width responsive */
+  max-width: 800px; /* Limits the maximum width for large screens */
+  box-sizing: border-box; /* Ensures padding doesn't exceed the total width */
 }
+
+.contact-email p {
+  align-self: flex-end; /* Moves text to the right */
+  padding: 1rem; /* Adds consistent inner spacing */
+  margin: 0; /* Removes default margins */
+  width: 100%; /* Ensures the paragraph stretches to the container's width */
+}
+
 @media (max-width: 1032px) {
   .contact-content {
     display: flex;
