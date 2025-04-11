@@ -394,7 +394,7 @@ body.light .link::after {
 .link:focus::after {
   transform: scaleX(1);
 }
--------- */
+
 
 section:not(:first-child) {
   padding-block-start: var(--gutter-huge);
@@ -560,6 +560,7 @@ body.light .header {
     left: 0;
     text-align: center;
     padding-inline: 0.6rem;
+    margin-top: 50px;
   }
   .header-btns {
     flex-direction: column;
@@ -661,6 +662,7 @@ body.light .logo {
 
   .work-img {
     margin-block-end: var(--gutter-medium);
+   
   }
 }
 
@@ -671,6 +673,8 @@ body.light .logo {
 @media (max-width: 1285px) {
   .work-box:not(:last-child) {
     margin-block-end: 8rem;
+   
+    
   }
 }
 
