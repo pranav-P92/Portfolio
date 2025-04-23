@@ -34,6 +34,7 @@ document.body.addEventListener("keydown", (e) => {
   }
 });
 
+
 workImgs.forEach((workImg) => workImg.classList.add("transform"));
 
 let observer = new IntersectionObserver(
@@ -53,6 +54,28 @@ let observer = new IntersectionObserver(
 workEls.forEach((workEl) => {
   observer.observe(workEl);
 });
+
+
+const switchThemeEl = document.querySelector('input[type="checkbox"]');
+const storedTheme = localStorage.getItem("theme");
+
+switchThemeEl.checked = storedTheme === "dark" || storedTheme === null;
+
+switchThemeEl.addEventListener("click", () => {
+  const isChecked = switchThemeEl.checked;
+
+  if (!isChecked) {
+    document.body.classList.remove("dark");
+    document.body.classList.add("light");
+    localStorage.setItem("theme", "light");
+    switchThemeEl.checked = false;
+  } else {
+    document.body.classList.add("dark");
+    document.body.classList.remove("light");
+    localStorage.setItem("theme", "dark");
+  }
+});
+
 
 const lastFocusedEl = document.querySelector('a[data-focused="last-focused"]');
 
